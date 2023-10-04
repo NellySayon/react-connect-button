@@ -1,22 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { RadixDappToolkit } from "@radixdlt/radix-dapp-toolkit";
 
 function App() {
+  const rdt = RadixDappToolkit({
+    dAppDefinitionAddress:
+      "account_tdx_2_12xf3455ks96n777zvsw8a5hvuk2cqzm58ktwrfuzrf6yqrl6ydv2h6", // change this to your own DApp address 
+    networkId: 2, // Stokenet
+  });
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          This is a simple create-react-app with Radix Dapp Toolkit using the
+          Radix Connect Button.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <radix-connect-button />
       </header>
     </div>
   );
